@@ -1,6 +1,6 @@
 .Flight-info {
   display: flex;
-  display: -webkit-box; 
+  display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -19,4 +19,28 @@
 
 .detail-label p {
   font-size: 14px;
+}
+
+.layoverDurationContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background: #ececec;
+  height: 30px;
+}
+
+.layoverText {
+  border: 1px dashed gray;
+  padding: 3px 24px;
+  height: 25px;
+  width: 200px;
+  background: white;
+  z-index: 1;
+}
+
+.dashedLine {
+  position: absolute;
+  top: 15px;
+  border-bottom: 1px dashed gray;
+  width: 100%;
 }

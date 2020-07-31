@@ -21,7 +21,12 @@ const MultiFlightLogo = (props) => {
 };
 
 const LayoverInfo = (props) => {
-  return <p className="layover-info">Layover of {props.time}</p>;
+  return (
+    <div className="layoverDurationContainer">
+      <div className="dashedLine"></div>
+      <p className="layoverText">Layover time {props.time}</p>
+    </div>
+  );
 };
 
 export const MultiFlightInfo = (props) => {
