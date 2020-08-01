@@ -12,7 +12,6 @@ function* fetchFlights() {
       json: transformFlightDates(json),
     });
   } catch (e) {
-    console.log('error', e);
     yield put({ type: 'GET_FLIGHTS_FAIL', error: e });
   }
 }
@@ -52,7 +51,6 @@ function* findFlights(payload) {
 
     yield put({ type: 'GET_ROUTES_SUCCESS', json: listOfFlights });
   } catch (e) {
-    console.log('error', e);
     yield put({ type: 'GET_ROUTES_FAIL', error: e });
   }
 }

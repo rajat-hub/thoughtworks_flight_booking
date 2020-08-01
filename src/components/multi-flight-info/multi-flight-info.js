@@ -72,6 +72,7 @@ export const MultiFlightInfo = (props) => {
         <DetailLabel
           mainText={getTimeDifferece(timeDiff)}
           subText={'Total Duration'}
+          isMultiple={true}
         ></DetailLabel>
         <PriceInfo amount={totalFare} />
         <Button variant="danger">Book</Button>

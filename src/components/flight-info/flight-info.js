@@ -3,12 +3,12 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { DetailLabel } from './../detail-label/detail-label';
 import { PriceInfo } from './../price-info/price-info';
-import nonStopFlightLogo from './../../assets/nonstop.png';
+import nonStopFlightLogo from './../../assets/nonstop1.png';
 import { getTimeDifferece } from './../../lib/utils';
 import './flight-info.css';
 
 const FlightLogo = (props) => {
-  return <img src={nonStopFlightLogo} width="32" height="32"></img>;
+  return <img src={nonStopFlightLogo} width="64" height="64"></img>;
 };
 
 export const FlightInfo = (props) => {

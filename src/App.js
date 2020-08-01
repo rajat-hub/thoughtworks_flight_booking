@@ -7,10 +7,11 @@ import { getFlights } from './actions';
 
 function App(props) {
   useEffect(() => {
-    props.getFlights()
+    props.getFlights();
   }, [(props.flights || []).legnth]);
 
-  const { origin, destination, departureDate, returnDate } = props.filters || {};
+  const { origin, destination, departureDate, returnDate } =
+    props.filters || {};
   return (
     <div className="App">
       <header className="App-header">
@@ -21,17 +22,26 @@ function App(props) {
           <SearchForm></SearchForm>
         </aside>
         <section className="Results-section">
-          { props.routes && props.routes.onwards && <FlightsGrid 
-            flights={ props.routes.onwards} 
-            criteria={{origin, destination, date: departureDate}}
-          ></FlightsGrid> }
-          {props.routes && props.routes.return && <FlightsGrid 
-            flights={ props.routes.return}
-            criteria={{origin: destination, destination: origin, date: returnDate}}
-          ></FlightsGrid>}
+          {props.routes && props.routes.onwards && (
+            <FlightsGrid
+              flights={props.routes.onwards}
+              criteria={{ origin, destination, date: departureDate }}
+              isDeparture={true}
+            ></FlightsGrid>
+          )}
+          {props.routes && props.routes.return && (
+            <FlightsGrid
+              flights={props.routes.return}
+              criteria={{
+                origin: destination,
+                destination: origin,
+                date: returnDate,
+              }}
+              isDeparture={false}
+            ></FlightsGrid>
+          )}
         </section>
       </section>
-            
     </div>
   );
 }
@@ -39,13 +49,11 @@ function App(props) {
 const mapStateToProps = (state) => ({
   flights: state.flights,
   routes: state.routes,
-  filters: state.filters
-})
+  filters: state.filters,
+});
 
 const mapDispatchToProps = {
-  getFlights
-}
+  getFlights,
+};
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(App)
-
+export default connect(mapStateToProps, mapDispatchToProps)(App);
